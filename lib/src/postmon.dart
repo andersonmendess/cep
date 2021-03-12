@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class Postmon {
   static Future<Model> consultarCep(String cep) async {
     final url = 'https://api.postmon.com.br/v1/cep/$cep';
-    var respostaHttp = await http.get(Uri(host: url));
+    var respostaHttp = await http.get(Uri.parse(url));
 
     if (respostaHttp.statusCode != 200) return null;
 
